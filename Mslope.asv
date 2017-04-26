@@ -1,0 +1,15 @@
+function [m1,m2] = Mslope(minus,plus,n)
+a = n+1; m1 = ones(a,a); m2 = ones(a,a); k=2; b=n;
+for j = 1:a %Rows
+for i = k:a %Columns
+    m1(j,i-1) = tand((minus(j,i-1) + minus(j,i))/2);
+end
+k = k+1;
+end
+for j = 1:a %Rows
+for i = b:a %Columns
+    m2(a-j,i) = tand((plus(i,j-1) + plus(i+1,j-1))/2);
+end
+k = k+1;
+end
+
