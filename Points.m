@@ -1,4 +1,4 @@
-function [X,Y] = Points(M1,M2)
+function [X,Y] = Points(M1,M2,N)
 X = ones(N);
 Y = ones(N);
 Xi = 0;
@@ -23,7 +23,7 @@ for i = 1:N
         else % Calculations for all other rows are the same
             if i == j
                 Y(i,j) = 0;
-                X(i,j) = XP(0,X(j,i-1),Y(j,i-1),M(i,j));
+                X(i,j) = XP(0,X(j,i-1),Y(j,i-1),M1(i,j));
             else
            Y(i,j) = YP(X(i,j-1),Y(i,j-1),X(j,i-1),Y(j,i-1),M1(i,j));
            X(i,j) = XP(Y(i,j),X(j,i-1),Y(j,i-1),M2(i,j));
